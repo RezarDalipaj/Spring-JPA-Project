@@ -2,8 +2,7 @@ package com.example.jpa_springg.MainImpl;
 
 import com.example.jpa_springg.model.User;
 import com.example.jpa_springg.model.UserDetails;
-import com.example.jpa_springg.services.UserService.UserService;
-import com.example.jpa_springg.services.UserService.UserServiceImpl;
+import com.example.jpa_springg.services.UserService;
 import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
@@ -50,25 +49,13 @@ public class UserMain {
         Optional<User> userById = user.findById(id);
         if (userById.isPresent()){
             User u1 = userById.get();
-            u1.setUserName(name);
-            u1.setRole(role);
-            u1.setPassword(pass);
-            user.save(u1);
-            UserDetails ud = UserDetailsMain.add(u1);
-            u1.setUserDetails(ud);
-            user.save(u1);
+            u1=setter(u1,name,role,pass);
             return u1;
         }
         else {
             User u2 = new User();
             u2.setId(null);
-            u2.setUserName(name);
-            u2.setRole(role);
-            u2.setPassword(pass);
-            user.save(u2);
-            UserDetails ud = UserDetailsMain.add(u2);
-            u2.setUserDetails(ud);
-            user.save(u2);
+            u2=setter(u2,name,role,pass);
             return u2;
         }
     }
@@ -113,5 +100,14 @@ public class UserMain {
         }
         else
             System.out.println("This user doesnt exist");
+    }
+    public User setter(User u1, String name, String role, String pass){
+        u1.setUserName(name);
+        u1.setRole(role);
+        u1.setPassword(pass);
+        user.save(u1);
+        UserDetails ud = UserDetailsMain.add(u1);
+        u1.setUserDetails(ud);
+        return u1;
     }
 }

@@ -3,12 +3,9 @@ package com.example.jpa_springg.MainImpl;
 import com.example.jpa_springg.model.Booking;
 import com.example.jpa_springg.model.Flight;
 import com.example.jpa_springg.model.User;
-import com.example.jpa_springg.services.BookingService.BookingService;
-import com.example.jpa_springg.services.BookingService.BookingServiceImpl;
-import com.example.jpa_springg.services.FlightService.FlightService;
-import com.example.jpa_springg.services.FlightService.FlightServiceImpl;
-import com.example.jpa_springg.services.UserService.UserService;
-import com.example.jpa_springg.services.UserService.UserServiceImpl;
+import com.example.jpa_springg.services.BookingService;
+import com.example.jpa_springg.services.FlightService;
+import com.example.jpa_springg.services.UserService;
 import org.springframework.stereotype.Component;
 
 import java.sql.Date;
@@ -84,20 +81,14 @@ public class BookingMain {
             Optional<Booking> bookingById = booking.findById(id);
             if (bookingById.isPresent()){
                 Booking b1 = bookingById.get();
-                b1.setStatus(status);
-                b1.setBookingDate(date);
-                b1.setUser(ubyId);
-                b1.setFlights(flights);
+                b1=setter(b1,status,date,ubyId,flights);
                 booking.save(b1);
                 return b1;
             }
             else {
                 Booking b2 = new Booking();
                 b2.setId(null);
-                b2.setStatus(status);
-                b2.setBookingDate(date);
-                b2.setUser(ubyId);
-                b2.setFlights(flights);
+                b2=setter(b2,status,date,ubyId,flights);
                 booking.save(b2);
                 return b2;
             }
@@ -148,5 +139,12 @@ public class BookingMain {
         }
         else
             System.out.println("This booking doesnt exist");
+    }
+    public static Booking setter(Booking b1, String status, Date date, User ubyId, List<Flight> flights){
+        b1.setStatus(status);
+        b1.setBookingDate(date);
+        b1.setUser(ubyId);
+        b1.setFlights(flights);
+        return b1;
     }
 }

@@ -1,5 +1,6 @@
-package com.example.jpa_springg.Repository.UserRepository;
+package com.example.jpa_springg.Repository.UserRepository.impl;
 
+import com.example.jpa_springg.Repository.UserRepository.UserRepository;
 import com.example.jpa_springg.config.EntityManagerConfig;
 import com.example.jpa_springg.model.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +11,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 @Component
-public class UserRepositoryImpl implements UserRepository{
+public class UserRepositoryImpl implements UserRepository {
 
     private EntityManager entityManager = EntityManagerConfig.getEntityManager();
     @Override

@@ -1,4 +1,4 @@
-package com.example.jpa_springg.services.FlightService;
+package com.example.jpa_springg.services;
 
 import com.example.jpa_springg.model.Flight;
 import com.example.jpa_springg.model.User;

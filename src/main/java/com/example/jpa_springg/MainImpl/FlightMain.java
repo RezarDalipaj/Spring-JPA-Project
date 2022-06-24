@@ -1,8 +1,7 @@
 package com.example.jpa_springg.MainImpl;
 
 import com.example.jpa_springg.model.Flight;
-import com.example.jpa_springg.services.FlightService.FlightService;
-import com.example.jpa_springg.services.FlightService.FlightServiceImpl;
+import com.example.jpa_springg.services.FlightService;
 import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
@@ -46,18 +45,14 @@ public class FlightMain {
         Optional<Flight> flightById = flight.findById(id);
         if (flightById.isPresent()){
             Flight f1 = flightById.get();
-            f1.setOrigin(origin);
-            f1.setDestination(dest);
-            f1.setAirline(air);
+            f1=setter(f1,origin,air,dest);
 //            f1.setUsers(users);
             flight.save(f1);
         }
         else {
             Flight f2 = new Flight();
             f2.setId(null);
-            f2.setOrigin(origin);
-            f2.setDestination(dest);
-            f2.setAirline(air);
+            f2=setter(f2,origin,air,dest);
 //            f2.setUsers(users);
             flight.save(f2);
         }
@@ -103,5 +98,11 @@ public class FlightMain {
         }
         else
             System.out.println("This flight doesnt exist");
+    }
+    public static Flight setter(Flight f1, String origin, String air, String dest){
+        f1.setOrigin(origin);
+        f1.setDestination(dest);
+        f1.setAirline(air);
+        return f1;
     }
 }

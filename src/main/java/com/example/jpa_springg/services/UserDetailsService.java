@@ -1,4 +1,4 @@
-package com.example.jpa_springg.services.UserDetailsService;
+package com.example.jpa_springg.services;
 
 import com.example.jpa_springg.model.UserDetails;
 

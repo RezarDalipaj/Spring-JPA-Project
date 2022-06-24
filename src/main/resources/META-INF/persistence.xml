@@ -7,11 +7,11 @@
         <description>
             Persistence unit for the JPA project
         </description>
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>org.example.model.User</class>
-        <class>org.example.model.Booking</class>
-        <class>org.example.model.Flight</class>
-        <class>org.example.model.UserDetails</class>
+<!--        <provider>org.hibernate.ejb.HibernatePersistence</provider>-->
+        <class>com.example.jpa_springg.model.User</class>
+        <class>com.example.jpa_springg.model.Booking</class>
+        <class>com.example.jpa_springg.model.Flight</class>
+        <class>com.example.jpa_springg.model.UserDetails</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/new_db" />

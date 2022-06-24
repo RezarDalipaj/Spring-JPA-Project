@@ -1,5 +1,6 @@
-package com.example.jpa_springg.Repository.UserDetailsRepository;
+package com.example.jpa_springg.Repository.UserDetailsRepository.impl;
 
+import com.example.jpa_springg.Repository.UserDetailsRepository.UserDetailsRepository;
 import com.example.jpa_springg.config.EntityManagerConfig;
 import com.example.jpa_springg.model.UserDetails;
 import org.springframework.stereotype.Component;
@@ -9,7 +10,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 @Component
-public class UserDetailsRepositoryImpl implements UserDetailsRepository{
+public class UserDetailsRepositoryImpl implements UserDetailsRepository {
     private EntityManager entityManager = EntityManagerConfig.getEntityManager();
     @Override
     public UserDetails save(UserDetails u) {

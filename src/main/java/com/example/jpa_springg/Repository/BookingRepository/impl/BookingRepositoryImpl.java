@@ -1,5 +1,6 @@
-package com.example.jpa_springg.Repository.BookingRepository;
+package com.example.jpa_springg.Repository.BookingRepository.impl;
 
+import com.example.jpa_springg.Repository.BookingRepository.BookingRepository;
 import com.example.jpa_springg.config.EntityManagerConfig;
 import com.example.jpa_springg.model.Booking;
 import org.springframework.context.annotation.Bean;

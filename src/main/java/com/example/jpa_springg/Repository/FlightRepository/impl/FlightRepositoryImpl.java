@@ -1,5 +1,6 @@
-package com.example.jpa_springg.Repository.FlightRepository;
+package com.example.jpa_springg.Repository.FlightRepository.impl;
 
+import com.example.jpa_springg.Repository.FlightRepository.FlightRepository;
 import com.example.jpa_springg.config.EntityManagerConfig;
 import com.example.jpa_springg.model.Flight;
 import com.example.jpa_springg.model.User;
@@ -10,7 +11,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 @Component
-public class FlightRepositoryImpl implements FlightRepository{
+public class FlightRepositoryImpl implements FlightRepository {
     private EntityManager entityManager = EntityManagerConfig.getEntityManager();
     @Override
     public Flight save(Flight f) {

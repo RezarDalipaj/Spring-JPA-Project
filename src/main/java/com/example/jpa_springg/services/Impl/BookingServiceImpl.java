@@ -1,13 +1,14 @@
-package com.example.jpa_springg.services.BookingService;
+package com.example.jpa_springg.services.Impl;
 
 import com.example.jpa_springg.Repository.BookingRepository.BookingRepository;
 import com.example.jpa_springg.model.Booking;
-import org.springframework.stereotype.Component;
+import com.example.jpa_springg.services.BookingService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-@Component
-public class BookingServiceImpl implements BookingService{
+@Service
+public class BookingServiceImpl implements BookingService {
     private BookingRepository bookings;
     public BookingServiceImpl(BookingRepository bookings) {
         this.bookings = bookings;
@@ -25,6 +26,4 @@ public class BookingServiceImpl implements BookingService{
     public Booking delete(Booking u){
         return bookings.delete(u);
     }
-
-
 }
