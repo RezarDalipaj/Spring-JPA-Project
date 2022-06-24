@@ -82,14 +82,12 @@ public class BookingMain {
             if (bookingById.isPresent()){
                 Booking b1 = bookingById.get();
                 b1=setter(b1,status,date,ubyId,flights);
-                booking.save(b1);
                 return b1;
             }
             else {
                 Booking b2 = new Booking();
                 b2.setId(null);
                 b2=setter(b2,status,date,ubyId,flights);
-                booking.save(b2);
                 return b2;
             }
         }
@@ -140,11 +138,12 @@ public class BookingMain {
         else
             System.out.println("This booking doesnt exist");
     }
-    public static Booking setter(Booking b1, String status, Date date, User ubyId, List<Flight> flights){
+    public Booking setter(Booking b1, String status, Date date, User ubyId, List<Flight> flights){
         b1.setStatus(status);
         b1.setBookingDate(date);
         b1.setUser(ubyId);
         b1.setFlights(flights);
+        booking.save(b1);
         return b1;
     }
 }

@@ -47,14 +47,12 @@ public class FlightMain {
             Flight f1 = flightById.get();
             f1=setter(f1,origin,air,dest);
 //            f1.setUsers(users);
-            flight.save(f1);
         }
         else {
             Flight f2 = new Flight();
             f2.setId(null);
             f2=setter(f2,origin,air,dest);
 //            f2.setUsers(users);
-            flight.save(f2);
         }
     }
     public void findId(){
@@ -99,10 +97,11 @@ public class FlightMain {
         else
             System.out.println("This flight doesnt exist");
     }
-    public static Flight setter(Flight f1, String origin, String air, String dest){
+    public Flight setter(Flight f1, String origin, String air, String dest){
         f1.setOrigin(origin);
         f1.setDestination(dest);
         f1.setAirline(air);
+        flight.save(f1);
         return f1;
     }
 }
