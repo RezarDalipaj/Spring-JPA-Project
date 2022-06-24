@@ -1,16 +1,15 @@
-package com.example.jpa_springg.services;
+package com.example.jpa_springg.services.UserService;
 
 import com.example.jpa_springg.Repository.UserRepository.UserRepository;
-import com.example.jpa_springg.Repository.UserRepository.UserRepositoryImpl;
 import com.example.jpa_springg.model.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 @Component
-public class UserService {
+public class UserServiceImpl implements UserService{
     private UserRepository users;
-    UserService(UserRepository users){
+    UserServiceImpl(UserRepository users){
         this.users = users;
     }
 //    UserRepository users = new UserRepositoryImpl();

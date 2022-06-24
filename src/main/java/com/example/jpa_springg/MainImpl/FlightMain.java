@@ -1,7 +1,7 @@
 package com.example.jpa_springg.MainImpl;
 
 import com.example.jpa_springg.model.Flight;
-import com.example.jpa_springg.services.FlightService;
+import com.example.jpa_springg.services.FlightService.FlightServiceImpl;
 import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
@@ -10,8 +10,8 @@ import java.util.Optional;
 import java.util.Scanner;
 @Component
 public class FlightMain {
-    FlightService flight;
-    FlightMain(FlightService flight){
+    FlightServiceImpl flight;
+    FlightMain(FlightServiceImpl flight){
         this.flight = flight;
     }
     public void find(){

@@ -1,16 +1,15 @@
-package com.example.jpa_springg.services;
+package com.example.jpa_springg.services.UserDetailsService;
 
 import com.example.jpa_springg.Repository.UserDetailsRepository.UserDetailsRepository;
-import com.example.jpa_springg.Repository.UserDetailsRepository.UserDetailsRepositoryImpl;
 import com.example.jpa_springg.model.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 @Component
-public class UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService{
     UserDetailsRepository users;
-    UserDetailsService(UserDetailsRepository users){
+    UserDetailsServiceImpl(UserDetailsRepository users){
         this.users = users;
     }
 //    UserDetailsRepository users = new UserDetailsRepositoryImpl();

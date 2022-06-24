@@ -2,7 +2,7 @@ package com.example.jpa_springg.MainImpl;
 
 import com.example.jpa_springg.model.User;
 import com.example.jpa_springg.model.UserDetails;
-import com.example.jpa_springg.services.UserDetailsService;
+import com.example.jpa_springg.services.UserDetailsService.UserDetailsServiceImpl;
 import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
@@ -11,8 +11,8 @@ import java.util.Optional;
 import java.util.Scanner;
 @Component
 public class UserDetailsMain {
-    UserDetailsService userDetail;
-    UserDetailsMain(UserDetailsService userDetail){
+    UserDetailsServiceImpl userDetail;
+    UserDetailsMain(UserDetailsServiceImpl userDetail){
         this.userDetail = userDetail;
     }
     public void find(){

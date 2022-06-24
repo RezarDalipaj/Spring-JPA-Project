@@ -1,7 +1,6 @@
-package com.example.jpa_springg.services;
+package com.example.jpa_springg.services.FlightService;
 
 import com.example.jpa_springg.Repository.FlightRepository.FlightRepository;
-import com.example.jpa_springg.Repository.FlightRepository.FlightRepositoryImpl;
 import com.example.jpa_springg.model.Flight;
 import com.example.jpa_springg.model.User;
 import org.springframework.stereotype.Component;
@@ -9,9 +8,9 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 @Component
-public class FlightService {
+public class FlightServiceImpl implements FlightService{
     private FlightRepository flights;
-    FlightService(FlightRepository flights){
+    FlightServiceImpl(FlightRepository flights){
         this.flights = flights;
     }
 //    FlightRepository flights = new FlightRepositoryImpl();

@@ -2,8 +2,7 @@ package com.example.jpa_springg.MainImpl;
 
 import com.example.jpa_springg.model.User;
 import com.example.jpa_springg.model.UserDetails;
-import com.example.jpa_springg.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.jpa_springg.services.UserService.UserServiceImpl;
 import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
@@ -12,10 +11,10 @@ import java.util.Optional;
 import java.util.Scanner;
 @Component
 public class UserMain {
-    UserService user;
+    UserServiceImpl user;
     UserDetailsMain UserDetailsMain;
 
-    public UserMain(UserService user, UserDetailsMain userDetailsMain) {
+    public UserMain(UserServiceImpl user, UserDetailsMain userDetailsMain) {
         this.user = user;
         UserDetailsMain = userDetailsMain;
     }

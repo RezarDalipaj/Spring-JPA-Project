@@ -3,10 +3,9 @@ package com.example.jpa_springg.MainImpl;
 import com.example.jpa_springg.model.Booking;
 import com.example.jpa_springg.model.Flight;
 import com.example.jpa_springg.model.User;
-import com.example.jpa_springg.services.BookingService;
-import com.example.jpa_springg.services.FlightService;
-import com.example.jpa_springg.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.jpa_springg.services.BookingService.BookingServiceImpl;
+import com.example.jpa_springg.services.FlightService.FlightServiceImpl;
+import com.example.jpa_springg.services.UserService.UserServiceImpl;
 import org.springframework.stereotype.Component;
 
 import java.sql.Date;
@@ -14,11 +13,11 @@ import java.util.*;
 
 @Component
 public class BookingMain {
-    BookingService booking;
-    UserService user;
-    FlightService flight;
+    BookingServiceImpl booking;
+    UserServiceImpl user;
+    FlightServiceImpl flight;
 
-    public BookingMain(BookingService booking, UserService user, FlightService flight) {
+    public BookingMain(BookingServiceImpl booking, UserServiceImpl user, FlightServiceImpl flight) {
         this.booking = booking;
         this.user = user;
         this.flight = flight;
