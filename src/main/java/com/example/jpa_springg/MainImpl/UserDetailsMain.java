@@ -2,6 +2,7 @@ package com.example.jpa_springg.MainImpl;
 
 import com.example.jpa_springg.model.User;
 import com.example.jpa_springg.model.UserDetails;
+import com.example.jpa_springg.services.UserDetailsService.UserDetailsService;
 import com.example.jpa_springg.services.UserDetailsService.UserDetailsServiceImpl;
 import org.springframework.stereotype.Component;
 
@@ -11,8 +12,8 @@ import java.util.Optional;
 import java.util.Scanner;
 @Component
 public class UserDetailsMain {
-    UserDetailsServiceImpl userDetail;
-    UserDetailsMain(UserDetailsServiceImpl userDetail){
+    UserDetailsService userDetail;
+    UserDetailsMain(UserDetailsService userDetail){
         this.userDetail = userDetail;
     }
     public void find(){

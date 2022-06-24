@@ -3,8 +3,11 @@ package com.example.jpa_springg.MainImpl;
 import com.example.jpa_springg.model.Booking;
 import com.example.jpa_springg.model.Flight;
 import com.example.jpa_springg.model.User;
+import com.example.jpa_springg.services.BookingService.BookingService;
 import com.example.jpa_springg.services.BookingService.BookingServiceImpl;
+import com.example.jpa_springg.services.FlightService.FlightService;
 import com.example.jpa_springg.services.FlightService.FlightServiceImpl;
+import com.example.jpa_springg.services.UserService.UserService;
 import com.example.jpa_springg.services.UserService.UserServiceImpl;
 import org.springframework.stereotype.Component;
 
@@ -13,11 +16,11 @@ import java.util.*;
 
 @Component
 public class BookingMain {
-    BookingServiceImpl booking;
-    UserServiceImpl user;
-    FlightServiceImpl flight;
+    BookingService booking;
+    UserService user;
+    FlightService flight;
 
-    public BookingMain(BookingServiceImpl booking, UserServiceImpl user, FlightServiceImpl flight) {
+    public BookingMain(BookingService booking, UserService user, FlightService flight) {
         this.booking = booking;
         this.user = user;
         this.flight = flight;
