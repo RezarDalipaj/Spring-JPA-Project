@@ -4,20 +4,22 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table
-public class UserDetails implements Serializable {
-
-    @OneToOne
-    @JoinColumn(nullable = false, unique = true, name = "userId", referencedColumnName = "id")
+@Table(name = "user_details")
+public class UserDetails {
     @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @OneToOne
+    @JoinColumn(nullable = false, unique = true, name = "user_id", referencedColumnName = "id")
     private User theUser;
-    @Column
+    @Column(name = "first_name")
     private String firstName;
-    @Column
+    @Column(name = "last_name")
     private String lastName;
     @Column
     private String email;
-    @Column
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     public String getFirstName() {

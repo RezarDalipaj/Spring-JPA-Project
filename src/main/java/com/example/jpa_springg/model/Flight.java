@@ -17,11 +17,11 @@ public class Flight {
     private String destination;
     @Column
     private String airline;
-    @Column
+    @Column(name = "flight_number")
     private Integer flightNumber;
-    @Column
+    @Column(name = "departure_date")
     private Date departureDate;
-    @Column
+    @Column(name = "arrival_date")
     private Date arrivalDate;
     @Column
     private String status;

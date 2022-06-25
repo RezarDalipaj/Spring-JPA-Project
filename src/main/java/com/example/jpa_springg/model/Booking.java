@@ -11,7 +11,7 @@ public class Booking {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(unique = true)
         private Integer id;
-        @Column
+        @Column(name = "booking_date")
         private Date bookingDate;
         @Column
         private String status;
